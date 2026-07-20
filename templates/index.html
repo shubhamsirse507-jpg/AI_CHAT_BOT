@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Chatbot</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="stars-bg"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="app-container">
+        <!-- Main Chat Card -->
+        <main class="chat-card">
+            <!-- Card Header -->
+            <header class="chat-header">
+                <div class="bot-info">
+                    <div class="status-indicator online" id="status-dot"></div>
+                    <div>
+                        <h1 class="app-title">AI Assistant</h1>
+                        <p class="status-text" id="status-text">Ready to assist you</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" id="settings-toggle" title="Settings">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat Message Box -->
+            <section class="messages-container" id="chat-messages">
+                <div class="message system-message">
+                    <div class="message-content">
+                        <p>👋 Hello! I am your AI Voice Assistant. Speak or type to begin chatting.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audio Wave Animation Pane -->
+            <div class="wave-container" id="wave-container">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+
+            <!-- Card Footer Input Panel -->
+            <footer class="input-panel">
+                <div class="input-row">
+                    <button class="mic-btn" id="mic-btn" title="Click to talk">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <div class="textarea-wrapper">
+                        <textarea id="text-input" placeholder="Type a message or click mic to talk..." rows="1"></textarea>
+                    </div>
+                    <button class="send-btn" id="send-btn" title="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Slide-out Settings Drawer -->
+        <aside class="settings-drawer" id="settings-drawer">
+            <div class="drawer-header">
+                <h2>Settings</h2>
+                <button class="icon-btn close-btn" id="settings-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="setting-item">
+                    <label for="ai-provider">AI Provider</label>
+                    <select id="ai-provider">
+                        <option value="gemini">Google Gemini</option>
+                        <option value="openai">OpenAI GPT</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="audio-mode">Audio Mode</label>
+                    <select id="audio-mode">
+                        <option value="browser">Browser Native (Recommended)</option>
+                        <option value="host">Host Machine (Server)</option>
+                    </select>
+                    <small class="help-text">
+                        <strong>Browser Mode</strong> uses your browser's speech capability. 
+                        <strong>Host Mode</strong> uses the server's local audio devices.
+                    </small>
+                </div>
+
+                <div class="setting-item toggle-item">
+                    <label for="tts-enabled">Read Aloud (TTS)</label>
+                    <label class="switch">
+                        <input type="checkbox" id="tts-enabled" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <hr class="divider">
+
+                <button class="action-btn danger" id="reset-chat-btn">
+                    <i class="fa-solid fa-trash-can"></i> Clear History
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

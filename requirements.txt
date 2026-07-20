@@ -1,0 +1,20 @@
+# AI & API
+openai>=1.0.0
+google-generativeai>=0.5.0
+
+# Speech Recognition
+SpeechRecognition>=3.10.0
+sounddevice>=0.4.6
+SpeechRecognition[sounddevice]>=3.10.0
+numpy>=1.20.0
+
+# Text to Speech
+pyttsx3>=2.90
+
+# Environment Variables
+python-dotenv>=1.0.0
+
+# Utilities
+requests>=2.31.0
+colorama>=0.4.6
+Flask>=3.0.0
