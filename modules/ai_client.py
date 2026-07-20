@@ -34,6 +34,14 @@ class AIClient:
         elif self.provider == "gemini":
             import google.generativeai as genai
             genai.configure(api_key=settings.GEMINI_API_KEY)
+            
+            # Log available models to help identify valid ones
+            try:
+                models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
+                logger.info(f"Available Gemini models: {models}")
+            except Exception as e:
+                logger.error(f"Could not list Gemini models: {e}")
+
             self.client = genai.GenerativeModel(settings.GEMINI_MODEL)
             self.chat_session = self.client.start_chat(history=[])
 
